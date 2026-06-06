@@ -1,0 +1,130 @@
+.container {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ── Model Info ─────────────────────────── */
+.modelInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.infoIcon {
+  color: var(--text-muted);
+}
+
+.infoLabel {
+  flex: 1;
+  color: var(--text-muted);
+}
+
+.infoValue {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+/* ── Buffer ─────────────────────────────── */
+.bufferSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.bufferHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.bufferCount {
+  margin-left: auto;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.bufferBar {
+  height: 6px;
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.bufferFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow), background var(--transition-slow);
+}
+
+.harvestRate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* ── Histogram ──────────────────────────── */
+.histogramSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.histogramTitle {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ── Tooltip ────────────────────────────── */
+.tooltip {
+  padding: var(--space-2) var(--space-3);
+  background: var(--chart-tooltip-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--text-secondary);
+}
+
+.tooltip strong {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}

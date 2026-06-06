@@ -1,0 +1,133 @@
+.container {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalBadge {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.arms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+/* ── Arm Card ───────────────────────────── */
+.arm {
+  padding: var(--space-3);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.armFiring {
+  border-color: var(--status-danger) !important;
+  box-shadow: var(--shadow-glow-danger);
+  animation: pulse-danger 0.8s ease-in-out infinite;
+}
+
+.armHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.armId {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-secondary);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusBadge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wider);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+/* ── Stats ──────────────────────────────── */
+.armStats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.statIcon {
+  color: var(--text-muted);
+}
+
+.statLabel {
+  flex: 1;
+  color: var(--text-muted);
+}
+
+.statValue {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.statValue small {
+  color: var(--text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+/* ── Last Fire ──────────────────────────── */
+.lastFire {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lastFireLabel {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.lastFireTime {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* ── Pressure Bar ───────────────────────── */
+.pressureBar {
+  height: 3px;
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.pressureFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}

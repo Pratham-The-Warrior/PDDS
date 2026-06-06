@@ -1,0 +1,255 @@
+.container {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.legend {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* ── Belt Area ──────────────────────────── */
+.beltArea {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.belt {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 80px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 41, 59, 0.8) 0%,
+    rgba(15, 23, 42, 0.9) 50%,
+    rgba(30, 41, 59, 0.8) 100%
+  );
+  border-radius: var(--radius-sm);
+  overflow: visible;
+}
+
+.beltTexture {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 22px,
+    rgba(100, 116, 139, 0.08) 22px,
+    rgba(100, 116, 139, 0.08) 24px
+  );
+  animation: conveyor-scroll 0.8s linear infinite;
+}
+
+.beltRailTop,
+.beltRailBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--accent-cyan-dim),
+    var(--accent-cyan) 20%,
+    var(--accent-cyan) 80%,
+    var(--accent-cyan-dim)
+  );
+  opacity: 0.5;
+}
+
+.beltRailTop { top: 0; }
+.beltRailBottom { bottom: 0; }
+
+/* ── Rollers ────────────────────────────── */
+.rollers {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--space-2);
+  pointer-events: none;
+}
+
+.roller {
+  width: 2px;
+  height: 100%;
+  background: rgba(100, 116, 139, 0.1);
+  border-radius: 1px;
+}
+
+/* ── Packages ───────────────────────────── */
+.package {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.packageBody {
+  position: relative;
+  width: 36px;
+  height: 30px;
+}
+
+.packageTop {
+  position: absolute;
+  top: -8px;
+  left: 4px;
+  width: 32px;
+  height: 12px;
+  background: var(--pkg-color);
+  opacity: 0.6;
+  transform: skewX(-20deg);
+  border-radius: 2px;
+}
+
+.packageFront {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 26px;
+  background: var(--pkg-color);
+  opacity: 0.85;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--pkg-color) 40%, transparent);
+}
+
+.packageSide {
+  position: absolute;
+  bottom: 0;
+  right: -6px;
+  width: 10px;
+  height: 26px;
+  background: var(--pkg-color);
+  opacity: 0.45;
+  transform: skewY(-20deg);
+  transform-origin: bottom right;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── Defect Marker ──────────────────────── */
+.defectMarker {
+  position: absolute;
+  top: -14px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+}
+
+.defectPulse {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--status-danger);
+  animation: pulse-danger 1.5s ease-in-out infinite;
+}
+
+.packageLabel {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+  opacity: 0.7;
+}
+
+.defectTag {
+  position: absolute;
+  bottom: -22px;
+  white-space: nowrap;
+  font-size: 8px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--status-danger);
+  background: var(--status-danger-dim);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+/* ── Reject Zone ────────────────────────── */
+.rejectZone {
+  position: absolute;
+  right: 12%;
+  top: 50%;
+  transform: translateY(50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.rejectArrow {
+  font-size: var(--font-size-xl);
+  color: var(--status-danger);
+  animation: pulse 2s ease-in-out infinite;
+  line-height: 1;
+}
+
+.rejectLabel {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--status-danger);
+  opacity: 0.7;
+}
+
+/* ── Camera Indicators ──────────────────── */
+.cameraIndicators {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.cameraPointer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transform: translateX(-50%);
+}
+
+.cameraIcon {
+  font-size: 10px;
+  color: var(--accent-cyan);
+  opacity: 0.6;
+}
+
+.cameraId {
+  font-size: 8px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  opacity: 0.5;
+}
