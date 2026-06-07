@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python / ML Backend
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Datasets and Model Weights (Too large for Git)
+datasets/
+ml/weights/
+backend/db/*.db
+pdds.db
