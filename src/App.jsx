@@ -1,4 +1,5 @@
-import { useSimulation } from './simulation/useSimulation';
+// To revert to simulated data, change this import to useSimulation
+import { useWebSocket as useSimulation } from './simulation/useWebSocket';
 import Header from './components/Header/Header';
 import ConveyorView from './components/ConveyorView/ConveyorView';
 import CameraGrid from './components/CameraGrid/CameraGrid';
@@ -21,7 +22,7 @@ export default function App() {
     latencyHistory,
     defectRateHistory,
     currentSample,
-  } = useSimulation(500, 5000);
+  } = useSimulation();
 
   return (
     <div className={styles.app}>
